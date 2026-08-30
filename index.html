@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#071d36" />
+  <meta name="description" content="PHALUAY MOTOR — ดูรถไฟฟ้า สเป็ก เปรียบเทียบ ราคา จองรถ นัดทดลองขับ และติดต่อฝ่ายขาย 92224844" />
+  <title>PHALUAY MOTOR | EV Showroom</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="topbar-left">
+        <span>📍 ບ້ານໜອງພະຍາ, ໄຊທານີ, ວຽງຈັນ</span>
+        <a href="tel:+8562092224844">☎ 92224844</a>
+      </div>
+      <div class="topbar-right">
+        <span>Sales: Mon–Sat 09:00–18:00</span>
+        <span class="top-social">f</span><span class="top-social">◎</span><span class="top-social">▶</span>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#home" aria-label="PHALUAY MOTOR">
+        <span class="brand-emblem">PM</span>
+        <span class="brand-text"><strong>PHALUAY</strong><b>MOTOR</b><small>ພາລວຍມໍເຕີ • EV CENTER</small></span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="เปิดเมนู">☰</button>
+      <nav class="nav" id="mainNav">
+        <a href="#home">HOME</a>
+        <a href="#inventory">INVENTORY</a>
+        <a href="#compare">COMPARE</a>
+        <a href="#finance">FINANCING</a>
+        <a href="#specials">SPECIALS</a>
+        <a href="#services">SERVICE & EV</a>
+        <a href="#about">ABOUT US</a>
+        <a href="#contact">CONTACT</a>
+      </nav>
+      <a class="btn btn-primary header-cta" href="#contact">BOOK / INQUIRE</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-city" aria-hidden="true"></div>
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <span class="eyebrow">QUALITY EV. PREMIUM EXPERIENCE.</span>
+          <h1>DRIVE ELECTRIC.<br><span>DRIVE PHALUAY.</span></h1>
+          <p>เลือก EV และรถพลังงานใหม่ที่เหมาะกับคุณ ดูสเป็ก ราคา เปรียบเทียบหลายรุ่น และติดต่อทีมขาย PHALUAY MOTOR ได้ในหน้าเดียว</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#inventory">BROWSE INVENTORY</a>
+            <a class="btn btn-ghost" href="#contact">BOOK / ASK NOW</a>
+          </div>
+          <div class="hero-points">
+            <span>✓ EV & PHEV</span><span>✓ Compare Specs</span><span>✓ After-sales Support</span>
+          </div>
+        </div>
+        <div class="hero-car" aria-hidden="true">
+          <div class="hero-ring"></div>
+          <img src="https://www.carexplore.com.au/content/images/thumbnail/2025-leapmotor-c10-3-scaled.jpg" alt="Leapmotor C10" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'" />
+          <div class="hero-fallback"><strong>PHALUAY MOTOR</strong><span>PREMIUM EV SHOWROOM</span></div>
+        </div>
+      </div>
+
+      <div class="wrap finder-wrap">
+        <div class="finder-card">
+          <div class="finder-head"><strong>FIND YOUR NEXT VEHICLE</strong><span>ค้นหารถที่เหมาะกับคุณ</span></div>
+          <div class="finder-grid">
+            <label><span>Make / แบรนด์</span><select id="heroBrand"><option value="all">ทุกแบรนด์</option></select></label>
+            <label><span>Model / รุ่น</span><select id="heroModel"><option value="all">ทุกรุ่น</option></select></label>
+            <label><span>Body Style / ตัวถัง</span><select id="heroBody"><option value="all">ทุกประเภท</option></select></label>
+            <label><span>Max Price / ราคาสูงสุด</span><select id="heroPrice"><option value="all">ไม่จำกัด</option><option value="20000">20,000 USD</option><option value="25000">25,000 USD</option><option value="30000">30,000 USD</option><option value="40000">40,000 USD</option><option value="60000">60,000 USD</option></select></label>
+            <button class="btn btn-search" id="heroSearch">SEARCH</button>
+          </div>
+          <button class="advanced-link" id="showAllBtn">Advanced Search / ดูรถทั้งหมด ↓</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section inventory" id="inventory">
+      <div class="wrap">
+        <div class="section-heading centered inventory-heading">
+          <span class="section-line"></span>
+          <div><small>PHALUAY MOTOR INVENTORY</small><h2>SHOP OUR EV INVENTORY</h2><p>รถเด่นจาก PHALUAY MOTOR พร้อมสเป็ก ราคา และปุ่มสอบถาม</p></div>
+          <span class="section-line"></span>
+        </div>
+
+        <div class="inventory-controls">
+          <div class="brand-tabs" id="brandTabs"></div>
+          <label class="search-input"><span>⌕</span><input id="inventorySearch" type="search" placeholder="ค้นหา C10, AION, SUV, 530 km..." /></label>
+        </div>
+        <div class="vehicle-grid" id="vehicleGrid"></div>
+        <div class="load-more-row"><button class="btn btn-primary" id="loadMoreBtn">VIEW ALL INVENTORY</button></div>
+      </div>
+    </section>
+
+    <section class="trust-strip">
+      <div class="wrap trust-grid">
+        <article><div class="trust-icon">✓</div><div><b>QUALITY YOU CAN TRUST</b><span>จัดข้อมูลสเป็กให้ดูง่ายก่อนตัดสินใจ</span></div></article>
+        <article><div class="trust-icon">$</div><div><b>PRICE & VALUE</b><span>เทียบราคา ระยะทาง และสมรรถนะได้เร็ว</span></div></article>
+        <article><div class="trust-icon">⚡</div><div><b>EV SERVICE CENTER</b><span>ดูแลแบตเตอรี่ BMS และงานบำรุงรักษา EV</span></div></article>
+        <article><div class="trust-icon">☎</div><div><b>EXPERT SUPPORT</b><span>ติดต่อฝ่ายขายโดยตรง 92224844</span></div></article>
+      </div>
+    </section>
+
+    <section class="section compare-section" id="compare">
+      <div class="wrap">
+        <div class="section-heading split"><div><small>COMPARE VEHICLES</small><h2>เปรียบเทียบรถสูงสุด 3 รุ่น</h2></div><p>เลือกรุ่นที่สนใจแล้วดูราคา ระยะทาง แบตเตอรี่ กำลัง แรงบิด และข้อมูลหลักแบบเทียบกัน</p></div>
+        <div class="compare-selectors">
+          <select class="compareSelect" data-slot="0"></select>
+          <select class="compareSelect" data-slot="1"></select>
+          <select class="compareSelect" data-slot="2"></select>
+          <button class="btn btn-light" id="clearCompare">ล้างทั้งหมด</button>
+        </div>
+        <div class="compare-table-wrap"><table id="compareTable"></table></div>
+      </div>
+    </section>
+
+    <section class="section specials" id="specials">
+      <div class="wrap">
+        <div class="section-heading centered"><span class="section-line"></span><div><small>PHALUAY MOTOR SPECIALS</small><h2>ข้อเสนอและบริการสำหรับลูกค้า EV</h2></div><span class="section-line"></span></div>
+        <div class="special-grid">
+          <article><span class="special-kicker">BOOKING</span><h3>จองรถ / ขอราคา</h3><p>เลือกรุ่นที่สนใจและส่งข้อมูลให้ฝ่ายขายติดต่อกลับ</p><a href="#contact">GET A QUOTE →</a></article>
+          <article><span class="special-kicker">TEST DRIVE</span><h3>นัดดูรถ / ทดลองขับ</h3><p>นัดหมายเวลาเข้าชมรถและรับคำแนะนำรุ่นที่เหมาะกับการใช้งาน</p><a href="#contact">BOOK A VISIT →</a></article>
+          <article><span class="special-kicker">AFTER SALES</span><h3>EV Care & Service</h3><p>ตรวจสุขภาพแบตเตอรี่ BMS ระบบหล่อเย็น งานสีและตัวถัง</p><a href="#services">VIEW SERVICE →</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section finance-section" id="finance">
+      <div class="wrap promo-grid">
+        <article class="promo-card finance-card">
+          <div class="promo-copy"><span>EASY FINANCING</span><h2>GET A PAYMENT PLAN<br>THAT FITS YOU</h2><p>แจ้งรุ่นรถ งบประมาณ และรูปแบบการชำระที่สนใจ เพื่อให้ฝ่ายขายช่วยแนะนำทางเลือก</p><a class="btn btn-primary" href="#contact">ASK ABOUT FINANCING</a></div>
+          <div class="promo-art finance-art"><div class="promo-orbit"></div><span>MONTHLY</span><strong>PLAN</strong><small>Flexible options</small></div>
+        </article>
+        <article class="promo-card trade-card">
+          <div class="promo-copy"><span>BOOK & TEST DRIVE</span><h2>SEE THE CAR.<br>FEEL THE EV.</h2><p>นัดดูรถหรือทดลองขับรุ่นที่สนใจ แล้วให้ทีมขายประสานงานเวลาที่สะดวก</p><a class="btn btn-outline" href="#contact">BOOK NOW</a></div>
+          <div class="promo-art trade-art"><div class="promo-car-shape">EV</div><strong>READY</strong><small>PHALUAY MOTOR</small></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section services" id="services">
+      <div class="wrap">
+        <div class="section-heading centered"><span class="section-line"></span><div><small>SERVICE & EV CARE</small><h2>ดูแลครบหลังการขาย</h2></div><span class="section-line"></span></div>
+        <div class="service-grid">
+          <article><div class="service-icon">🔋</div><h3>Battery Health Check</h3><p>ตรวจสุขภาพแบตเตอรี่ โมดูล BMS และระบบระบายความร้อน</p></article>
+          <article><div class="service-icon">🛠️</div><h3>EV Maintenance</h3><p>ตรวจเช็กและบำรุงรักษารถ EV / PHEV อย่างเป็นระบบ</p></article>
+          <article><div class="service-icon">🚚</div><h3>Transport Support</h3><p>ประสานงานขนส่งรถและช่วยเหลือตามความต้องการของลูกค้า</p></article>
+          <article><div class="service-icon">✨</div><h3>Body & Paint</h3><p>งานตัวถัง สี และเก็บรายละเอียดรถเพื่อความเรียบร้อย</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="brand-showcase">
+      <div class="wrap">
+        <p>WE FEATURE EV & NEW ENERGY BRANDS</p>
+        <div class="brand-logo-row" id="brandLogoRow"></div>
+      </div>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="wrap about-grid">
+        <div><span class="eyebrow">ABOUT PHALUAY MOTOR</span><h2>EV SHOWROOM &<br>NEW ENERGY CENTER</h2><p>พื้นที่สำหรับเลือกซื้อ สั่งจอง และสอบถามรถไฟฟ้าหลากหลายรุ่น พร้อมบริการตรวจเช็ก ซ่อมบำรุงแบตเตอรี่ และดูแลหลังการขาย</p><a class="btn btn-white" href="#contact">CONTACT OUR TEAM</a></div>
+        <div class="about-stats"><article><b id="totalModels">0+</b><span>รุ่นในเว็บไซต์</span></article><article><b id="totalBrands">0+</b><span>แบรนด์</span></article><article><b>3</b><span>รุ่นเทียบพร้อมกัน</span></article><article><b>92224844</b><span>ฝ่ายขาย</span></article></div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="wrap contact-card">
+        <div class="contact-info">
+          <span class="eyebrow light-text">CONTACT US</span>
+          <h2>READY TO FIND<br>YOUR NEXT EV?</h2>
+          <p>เลือก “สอบถามข้อมูล”, “ขอราคา”, “จองรถ”, “ทดลองขับ” หรือ “ปรึกษาไฟแนนซ์” แล้วระบบจะสร้างข้อความพร้อมส่งผ่าน WhatsApp</p>
+          <a class="contact-phone" href="tel:+8562092224844">☎ 92224844</a>
+          <div class="contact-buttons"><a class="btn btn-white" href="tel:+8562092224844">CALL NOW</a><a class="btn btn-whatsapp" href="https://wa.me/8562092224844" target="_blank" rel="noopener">WHATSAPP</a></div>
+        </div>
+        <form class="lead-form" id="leadForm">
+          <div class="field-row"><label>ชื่อ<input name="name" required placeholder="ชื่อของคุณ" /></label><label>เบอร์โทร<input name="phone" required type="tel" placeholder="20xxxxxxxx" /></label></div>
+          <div class="field-row"><label>รุ่นที่สนใจ<select id="leadModel" name="model" required></select></label><label>ต้องการ<select name="intent"><option>สอบถามข้อมูล</option><option>ขอราคา</option><option>จองรถ</option><option>นัดดูรถ / ทดลองขับ</option><option>ปรึกษาไฟแนนซ์</option></select></label></div>
+          <label>รายละเอียดเพิ่มเติม<textarea name="note" rows="4" placeholder="สี รุ่นย่อย งบประมาณ วันที่สะดวก หรือคำถามเพิ่มเติม"></textarea></label>
+          <button class="btn btn-primary btn-full" type="submit">ส่งข้อมูลถึงฝ่ายขาย</button>
+          <div class="lead-result" id="leadResult" hidden></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-grid">
+      <div class="footer-brand"><a class="brand brand-footer" href="#home"><span class="brand-emblem">PM</span><span class="brand-text"><strong>PHALUAY</strong><b>MOTOR</b><small>EV CENTER</small></span></a><p>EV showroom • Specs • Compare • Booking • Service</p><div class="footer-social"><span>f</span><span>◎</span><span>▶</span><span>WA</span></div></div>
+      <div><h4>QUICK LINKS</h4><a href="#inventory">Inventory</a><a href="#compare">Compare</a><a href="#finance">Financing</a><a href="#specials">Specials</a><a href="#services">Service & EV</a></div>
+      <div><h4>CONTACT US</h4><a href="tel:+8562092224844">☎ 92224844</a><a href="https://wa.me/8562092224844" target="_blank" rel="noopener">WhatsApp</a><span>ບ້ານໜອງພະຍາ, ໄຊທານີ</span><span>ນະຄອນຫຼວງວຽງຈັນ</span></div>
+      <div><h4>HOURS & INFO</h4><span>Sales: Mon–Sat 09:00–18:00</span><span>ข้อมูลสเป็กและราคาอาจต่างตามรุ่นย่อย/ตลาด</span><span>กรุณายืนยันข้อมูลล่าสุดกับฝ่ายขายก่อนจอง</span></div>
+    </div>
+    <div class="wrap copyright">© 2026 PHALUAY MOTOR. All rights reserved.</div>
+  </footer>
+
+  <dialog id="vehicleDialog"><button class="dialog-close" id="dialogClose">×</button><div id="dialogContent"></div></dialog>
+  <div class="compare-dock" id="compareDock"><div><strong id="dockCount">0/3</strong><span>รถที่เลือกเปรียบเทียบ</span></div><div id="dockCars"></div><a href="#compare" class="btn btn-primary">ดูตารางเทียบ</a></div>
+  <a class="floating-whatsapp" href="https://wa.me/8562092224844" target="_blank" rel="noopener" aria-label="WhatsApp">WA</a>
+  <div class="toast" id="toast"></div>
+
+  <script src="cars.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
