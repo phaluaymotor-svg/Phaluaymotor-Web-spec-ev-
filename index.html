@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#b40012" />
+  <meta name="description" content="PHALUAY MOTOR — ดูสเป็กรถไฟฟ้า เปรียบเทียบรุ่น ขอราคา และจองรถได้ที่ 92224844" />
+  <title>PHALUAY MOTOR | EV Specs & Compare</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="PHALUAY MOTOR">
+      <span class="brand-mark">P</span>
+      <span class="brand-copy"><b>PHALUAY MOTOR</b><small>ພາລວຍມໍເຕີ • EV CENTER</small></span>
+    </a>
+    <nav class="nav">
+      <a href="#models">รถทั้งหมด</a><a href="#compare">เปรียบเทียบ</a><a href="#services">บริการ</a><a href="#booking">จอง / สอบถาม</a>
+    </nav>
+    <div class="header-actions"><a class="phone-link" href="tel:92224844">☎ 92224844</a><a class="button primary compact" href="#booking">จองรถ</a></div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-bg"></div>
+      <div class="hero-content">
+        <div class="hero-copy">
+          <span class="kicker">PHALUAY MOTOR • ELECTRIC & NEW ENERGY VEHICLES</span>
+          <h1>เลือกรถที่ใช่<br><span>เทียบสเป็กให้ชัด</span><br>ก่อนตัดสินใจ</h1>
+          <p>รวมรถ AION, GAC, Leapmotor และ Dongfeng ในที่เดียว ดูสเป็กสำคัญ เปรียบเทียบได้สูงสุด 3 รุ่น และส่งคำขอราคา/จองรถถึงฝ่ายขายได้ทันที</p>
+          <div class="hero-actions"><a class="button primary" href="#models">ดูรถทั้งหมด</a><a class="button ghost" href="#compare">เปรียบเทียบรถ</a></div>
+          <div class="trust-row"><span>✓ ข้อมูลเป็นหมวดหมู่</span><span>✓ ใช้งานบนมือถือ</span><span>✓ ติดต่อฝ่ายขายโดยตรง</span></div>
+        </div>
+        <div class="hero-showcase">
+          <div class="showcase-frame">
+            <div class="showcase-badge"><b>PHALUAY</b><span>SELECT</span></div>
+            <img src="https://www.carexplore.com.au/content/images/thumbnail/2025-leapmotor-c10-3-scaled.jpg" alt="Leapmotor C10" referrerpolicy="no-referrer" onerror="this.style.display='none'" />
+            <div class="showcase-fallback"><span>EV</span><strong>Premium Selection</strong><small>AION • GAC • Leapmotor • Dongfeng</small></div>
+            <div class="showcase-panel"><span>แนะนำ</span><b>Leapmotor C10</b><small>530 km • 170 kW • RWD</small></div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-metrics"><div><b id="modelCount">0</b><span>รุ่นในระบบ</span></div><div><b>4</b><span>แบรนด์หลัก</span></div><div><b>3</b><span>รุ่นที่เทียบพร้อมกัน</span></div><div><b>92224844</b><span>ฝ่ายขาย</span></div></div>
+    </section>
+
+    <section class="section" id="models">
+      <div class="section-title"><div><span class="kicker">MODEL FINDER</span><h2>ค้นหารถของ PHALUAY MOTOR</h2></div><p>ค้นหาจากชื่อรุ่น แบรนด์ ประเภทรถ หรือระยะทาง พร้อมดูข้อมูลที่สำคัญต่อการตัดสินใจ</p></div>
+      <div class="toolbar">
+        <label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="ค้นหา เช่น C10, AION, SUV, 530 km" /></label>
+        <select id="brandFilter"><option value="all">ทุกแบรนด์</option></select>
+        <select id="typeFilter"><option value="all">ทุกประเภท</option></select>
+        <button class="button ghost" id="resetFilters">ล้างตัวกรอง</button>
+      </div>
+      <div class="brand-tabs" id="brandTabs"></div>
+      <div class="model-grid" id="modelGrid"></div>
+    </section>
+
+    <section class="section dark-section" id="compare">
+      <div class="section-title inverse"><div><span class="kicker">SMART COMPARE</span><h2>เปรียบเทียบสเป็กรถ</h2></div><p>เลือกสูงสุด 3 รุ่น ตารางจะเทียบระยะทาง แบตเตอรี่ กำลัง แรงบิด ที่นั่ง ระบบขับเคลื่อน และราคาให้ทันที</p></div>
+      <div class="compare-pickers"><select class="compareSelect" data-slot="0"></select><select class="compareSelect" data-slot="1"></select><select class="compareSelect" data-slot="2"></select><button class="button light" id="clearCompare">ล้างทั้งหมด</button></div>
+      <div class="compare-shell"><table id="compareTable"></table></div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="section-title"><div><span class="kicker">PHALUAY MOTOR CARE</span><h2>มากกว่าการเลือกซื้อรถ</h2></div><p>พื้นที่สำหรับเพิ่มบริการจริงของบริษัท เช่น ตรวจแบตเตอรี่ EV, ซ่อมบำรุง, งานตัวถังสี และบริการหลังการขาย</p></div>
+      <div class="service-grid"><article><span>⚡</span><h3>EV Battery Service</h3><p>ตรวจสุขภาพแบตเตอรี่ ระบบ BMS โมดูล และระบบระบายความร้อน</p></article><article><span>🛠</span><h3>After-sales Service</h3><p>ตรวจเช็กและบำรุงรักษารถไฟฟ้า/รถพลังงานใหม่อย่างเป็นระบบ</p></article><article><span>🚚</span><h3>Transport Support</h3><p>รองรับงานขนส่งรถและประสานงานบริการตามความต้องการลูกค้า</p></article><article><span>✨</span><h3>Body & Paint</h3><p>งานตัวถัง สี และเก็บรายละเอียดรถให้พร้อมใช้งาน</p></article></div>
+    </section>
+
+    <section class="section booking" id="booking">
+      <div class="booking-card">
+        <div class="booking-copy"><span class="kicker">SALES CONTACT</span><h2>ขอราคา / จองรถ / นัดดูรถ</h2><p>ส่งรายละเอียดรุ่นที่สนใจให้ฝ่ายขาย PHALUAY MOTOR จากหน้าเว็บได้ทันที</p><a class="big-phone" href="tel:92224844">☎ <b>92224844</b></a><div class="contact-links"><a href="tel:92224844">โทรทันที</a><a href="https://wa.me/8562092224844" target="_blank" rel="noopener">WhatsApp</a></div></div>
+        <form id="bookingForm" class="booking-form"><div class="form-row"><label>ชื่อผู้สนใจ<input name="name" required placeholder="ชื่อของคุณ" /></label><label>เบอร์โทร<input name="phone" type="tel" required placeholder="20xxxxxxxx" /></label></div><div class="form-row"><label>รุ่นที่สนใจ<select id="bookingModel" name="model" required></select></label><label>ต้องการ<select name="intent"><option>สอบถามข้อมูล</option><option>ขอใบเสนอราคา</option><option>จองรถ / นัดดูรถ</option><option>ทดลองขับ</option></select></label></div><label>รายละเอียดเพิ่มเติม<textarea name="note" rows="4" placeholder="สี รุ่นย่อย งบประมาณ หรือวันที่สะดวก"></textarea></label><button class="button primary full" type="submit">สร้างข้อความติดต่อฝ่ายขาย</button><div id="bookingResult" class="booking-result" hidden></div></form>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="brand"><span class="brand-mark">P</span><span class="brand-copy"><b>PHALUAY MOTOR</b><small>ພາລວຍມໍເຕີ • EV CENTER</small></span></div><p>EV Specs • Compare • Booking • Cloud-ready for GitHub Pages & AWS Amplify</p><a href="tel:92224844">92224844</a></footer>
+
+  <dialog id="modelDialog"><button class="dialog-close" aria-label="ปิด">×</button><div id="dialogContent"></div></dialog>
+  <div id="toast" class="toast"></div>
+  <a class="floating-contact" href="tel:92224844">☎</a>
+  <script src="cars.js"></script><script src="app.js"></script>
+</body>
+</html>
