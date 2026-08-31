@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="lo" class="auth-checking">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#090909" />
+  <meta name="description" content="PHALUAY MOTOR — detailed vehicle specifications, interactive 360 viewer, ADAS, dimensions and booking" />
+  <title>Vehicle Specs | PHALUAY MOTOR</title>
+  <link rel="icon" type="image/webp" href="assets/phaluay-logo.webp" />
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="https://www.gstatic.com/firebasejs/12.18.0/firebase-app-compat.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/12.18.0/firebase-auth-compat.js"></script>
+  <script defer src="firebase-config.js"></script>
+  <script defer src="firebase-init.js"></script>
+  <script defer src="auth-guard.js"></script>
+</head>
+<body class="detail-page red-black-theme">
+  <div class="detail-scroll-progress" id="detailScrollProgress"></div>
+
+  <header class="detail-top-header">
+    <div class="wrap detail-top-inner">
+      <a class="official-wordmark" href="index.html" aria-label="PHALUAY MOTOR">
+        <img src="assets/phaluay-logo.webp" alt="PHALUAY MOTOR" />
+      </a>
+      <div class="detail-top-actions">
+        <div class="language-switch" aria-label="Language">
+          <button data-lang="lo">ລາວ</button><button data-lang="th">ไทย</button><button data-lang="en">EN</button>
+        </div>
+        <a class="member-link" href="account.html"><img data-auth-photo hidden alt=""><span data-auth-user>ACCOUNT</span></a>
+        <a href="tel:+8562092224844">☎ 92224844</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="detailApp">
+    <section class="model-hero" id="modelHero">
+      <div class="wrap detail-nav">
+        <a class="back-link" href="index.html#inventory">← กลับไปรถทั้งหมด</a>
+        <div class="detail-contact-mini">
+          <a href="tel:+8562092224844">☎ 92224844</a>
+          <a id="topWhatsApp" href="https://wa.me/8562092224844" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="wrap model-hero-grid">
+        <div class="model-hero-copy">
+          <div class="model-kicker" id="modelKicker">PHALUAY MOTOR</div>
+          <h1 class="model-title" id="modelTitle">Loading...</h1>
+          <p class="model-subtitle" id="modelSubtitle"></p>
+          <div class="model-price" id="modelPrice"></div>
+          <div class="model-actions">
+            <a class="btn btn-white" id="bookModel" href="#contactModel">จอง / ขอราคา</a>
+            <a class="btn btn-outline" id="waModel" target="_blank" rel="noopener">สอบถาม WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="hero-vehicle">
+          <div class="model-image-fallback" id="modelImageFallback"><b id="fallbackModel">PHALUAY MOTOR</b><span>MODEL IMAGE</span></div>
+          <img id="modelImage" alt="PHALUAY MOTOR vehicle" referrerpolicy="no-referrer" />
+        </div>
+      </div>
+
+      <div class="wrap">
+        <div class="hero-spec-strip" id="heroSpecStrip"></div>
+      </div>
+    </section>
+
+    <nav class="detail-section-nav" aria-label="Vehicle detail sections">
+      <div class="wrap detail-section-nav-inner">
+        <a href="#overviewSection"><span>01</span>ภาพรวม</a>
+        <a href="#spin360Section"><span>02</span>360°</a>
+        <a href="#performanceSection"><span>03</span>สมรรถนะ</a>
+        <a href="#chargingSection"><span>04</span>แบตเตอรี่</a>
+        <a href="#dimensionSection"><span>05</span>ขนาดรถ</a>
+        <a href="#safetySection"><span>06</span>ADAS</a>
+        <a href="#cabinSection"><span>07</span>ภายใน</a>
+      </div>
+    </nav>
+
+    <section class="detail-content">
+      <div class="wrap">
+        <section class="detail-overview-block" id="overviewSection">
+          <div class="detail-intro">
+            <div>
+              <span class="eyebrow">01 • MODEL OVERVIEW</span>
+              <h2 id="overviewTitle">รายละเอียดรถ</h2>
+              <p id="overviewText"></p>
+              <div class="overview-guide">
+                <span>✓ สเป็กแยกตามรุ่น</span>
+                <span>✓ เปรียบเทียบข้อมูลสำคัญ</span>
+                <span>✓ ยืนยันรุ่นย่อยก่อนจอง</span>
+              </div>
+            </div>
+            <aside class="detail-side-card" id="contactModel">
+              <small>PHALUAY MOTOR SALES</small>
+              <h3>สนใจรถรุ่นนี้?</h3>
+              <p>ติดต่อทีมขายพร้อมระบุรุ่นรถ เพื่อสอบถามราคา รุ่นย่อย สีรถ และวันนัดดูรถ</p>
+              <a class="btn btn-primary btn-full" id="sideWhatsApp" target="_blank" rel="noopener">WhatsApp</a>
+              <a class="btn btn-light btn-full" href="tel:+8562092224844">โทร 92224844</a>
+            </aside>
+          </div>
+          <div class="spec-overview-grid" id="specOverview"></div>
+        </section>
+
+        <section class="spin360-section spec-section spec-section-featured" id="spin360Section">
+          <div class="spec-section-head">
+            <div>
+              <span class="eyebrow">02 • INTERACTIVE VIEW</span>
+              <h2>ดูรถแบบ 360°</h2>
+              <p>ลากซ้าย–ขวาเพื่อหมุนรถ • ใช้ปุ่ม + / − เพื่อซูม • รองรับเมาส์และหน้าจอสัมผัส</p>
+            </div>
+            <div class="viewer-mode-badge" id="viewerModeBadge">360 READY</div>
+          </div>
+
+          <div class="spin360-viewer" id="spinViewer">
+            <div class="spin-stage" id="spinStage" tabindex="0" aria-label="Interactive vehicle viewer">
+              <div class="spin-floor"></div>
+              <div class="spin-drag-hint" id="spinDragHint">↔ DRAG TO ROTATE</div>
+              <img id="spinImage" alt="360 vehicle viewer" referrerpolicy="no-referrer" draggable="false" />
+              <div class="spin-watermark">360°</div>
+            </div>
+
+            <div class="spin-toolbar" aria-label="360 viewer controls">
+              <button type="button" id="spinPrev" title="Previous angle">‹</button>
+              <button type="button" id="spinPlay" class="spin-play" title="Auto rotate">▶</button>
+              <button type="button" id="spinNext" title="Next angle">›</button>
+              <span class="spin-toolbar-divider"></span>
+              <button type="button" id="spinZoomOut" title="Zoom out">−</button>
+              <button type="button" id="spinReset" title="Reset view">RESET</button>
+              <button type="button" id="spinZoomIn" title="Zoom in">+</button>
+            </div>
+
+            <div class="spin-controls">
+              <span>0°</span>
+              <input id="spinRange" type="range" min="0" max="100" value="0" aria-label="Vehicle angle"/>
+              <b id="spinCounter">0°</b>
+            </div>
+
+            <div class="spin-angle-labels" aria-hidden="true"><span>FRONT</span><span>RIGHT</span><span>REAR</span><span>LEFT</span></div>
+            <div class="spin-status" id="spinStatus"></div>
+          </div>
+        </section>
+
+        <div class="detail-section-title">
+          <span>03</span>
+          <div><small>POWER & PERFORMANCE</small><h2>สมรรถนะและระบบขับเคลื่อน</h2><p>ข้อมูลหลักของกำลัง ระยะทาง มอเตอร์ เครื่องยนต์ และระบบส่งกำลัง</p></div>
+        </div>
+        <div class="spec-two-col" id="performanceSection">
+          <section class="spec-section compact-spec-section">
+            <div class="spec-section-head"><div><span class="eyebrow">PERFORMANCE</span><h2>สมรรถนะ</h2></div></div>
+            <table class="full-spec-table"><tbody id="performanceSpecs"></tbody></table>
+          </section>
+          <section class="spec-section compact-spec-section">
+            <div class="spec-section-head"><div><span class="eyebrow">POWERTRAIN</span><h2>ระบบขับเคลื่อน</h2></div></div>
+            <table class="full-spec-table"><tbody id="powertrainSpecs"></tbody></table>
+          </section>
+        </div>
+
+        <div class="detail-section-title">
+          <span>04</span>
+          <div><small>ENERGY & PRACTICALITY</small><h2>แบตเตอรี่ การชาร์จ และขนาดรถ</h2><p>ข้อมูลที่ใช้ตัดสินใจเรื่องระยะทาง การชาร์จ พื้นที่ และการใช้งานจริง</p></div>
+        </div>
+        <div class="spec-two-col">
+          <section class="spec-section compact-spec-section" id="chargingSection">
+            <div class="spec-section-head"><div><span class="eyebrow">BATTERY & CHARGING</span><h2>แบตเตอรี่และการชาร์จ</h2></div></div>
+            <table class="full-spec-table"><tbody id="chargingSpecs"></tbody></table>
+          </section>
+          <section class="spec-section compact-spec-section" id="dimensionSection">
+            <div class="spec-section-head"><div><span class="eyebrow">SIZE & PRACTICALITY</span><h2>ขนาดและการใช้งาน</h2></div></div>
+            <table class="full-spec-table"><tbody id="dimensionSpecs"></tbody></table>
+          </section>
+        </div>
+
+        <section class="spec-section" id="chassisSection">
+          <div class="spec-section-head">
+            <div><span class="eyebrow">05 • CHASSIS</span><h2>ช่วงล่าง ล้อ และระบบเบรก</h2></div>
+            <p>รวมข้อมูลพวงมาลัย ช่วงล่าง เบรก ล้อ และอุปกรณ์เกี่ยวกับยาง</p>
+          </div>
+          <table class="full-spec-table"><tbody id="chassisSpecs"></tbody></table>
+        </section>
+
+        <section class="spec-section adas-section spec-section-featured" id="safetySection">
+          <div class="spec-section-head">
+            <div><span class="eyebrow">06 • ADAS & SAFETY</span><h2>ระบบช่วยขับและความปลอดภัย</h2></div>
+            <p>ฟังก์ชัน ADAS อาจต่างกันตามรุ่นย่อยและตลาดนำเข้า โปรดยืนยันรถคันจริงก่อนจอง</p>
+          </div>
+          <div class="adas-grid" id="adasGrid"></div>
+          <div class="spec-two-col spec-two-col-inside">
+            <div>
+              <h3 class="spec-subheading">ระบบความปลอดภัยพื้นฐาน</h3>
+              <table class="full-spec-table"><tbody id="safetySpecs"></tbody></table>
+            </div>
+            <div>
+              <h3 class="spec-subheading">ระบบช่วยขับขั้นสูง</h3>
+              <table class="full-spec-table"><tbody id="adasSpecs"></tbody></table>
+            </div>
+          </div>
+        </section>
+
+        <div class="detail-section-title">
+          <span>07</span>
+          <div><small>SMART CABIN</small><h2>เทคโนโลยีและความสะดวกสบาย</h2><p>หน้าจอ การเชื่อมต่อ ระบบเสียง เบาะ หลังคา แอร์ และอุปกรณ์ภายใน</p></div>
+        </div>
+        <div class="spec-two-col" id="cabinSection">
+          <section class="spec-section compact-spec-section">
+            <div class="spec-section-head"><div><span class="eyebrow">TECHNOLOGY</span><h2>เทคโนโลยีห้องโดยสาร</h2></div></div>
+            <table class="full-spec-table"><tbody id="cabinSpecs"></tbody></table>
+          </section>
+          <section class="spec-section compact-spec-section">
+            <div class="spec-section-head"><div><span class="eyebrow">COMFORT</span><h2>ความสะดวกสบาย</h2></div></div>
+            <table class="full-spec-table"><tbody id="comfortSpecs"></tbody></table>
+          </section>
+        </div>
+
+        <div class="real-data-note">
+          <span>✓</span>
+          <div><strong>ข้อมูลตามรุ่นจริง</strong><span>ค่าที่มีแหล่งยืนยันจะแสดงในระบบ ส่วนอุปกรณ์ที่แตกต่างตามรุ่นย่อย ปีผลิต หรือตลาด จะขึ้น “ยืนยันตามรุ่นย่อย”</span></div>
+        </div>
+        <div class="source-card" id="sourceCard" hidden></div>
+
+        <section class="related-section">
+          <div class="section-heading split">
+            <div><small>MORE FROM THIS BRAND</small><h2 id="relatedTitle">รุ่นอื่นที่น่าสนใจ</h2></div>
+            <a href="index.html#inventory">ดูรถทั้งหมด →</a>
+          </div>
+          <div class="related-grid" id="relatedGrid"></div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <a class="official-wordmark footer-wordmark" href="index.html"><img src="assets/phaluay-logo.webp" alt="PHALUAY MOTOR" /></a>
+        <p>EV showroom • 360° • Specs • Compare • Booking • Service</p>
+      </div>
+      <div><h4>QUICK LINKS</h4><a href="index.html#inventory">Inventory</a><a href="index.html#compare">Compare</a><a href="index.html#finance">Financing</a><a href="index.html#services">Service & EV</a></div>
+      <div><h4>CONTACT US</h4><a href="tel:+8562092224844">☎ 92224844</a><a href="https://wa.me/8562092224844" target="_blank" rel="noopener">WhatsApp</a><span>ບ້ານໜອງພະຍາ, ໄຊທານີ</span><span>ນະຄອນຫຼວງວຽງຈັນ</span></div>
+      <div><h4>IMPORTANT</h4><span>สเป็กอาจต่างตามรุ่นย่อย/ปีผลิต/ตลาด</span><span>กรุณายืนยันรถคันจริงและรุ่นย่อยกับฝ่ายขายก่อนจอง</span></div>
+    </div>
+    <div class="wrap copyright">© 2026 PHALUAY MOTOR. All rights reserved.</div>
+  </footer>
+
+  <div class="detail-sticky-cta"><a class="call" href="tel:+8562092224844">☎ โทร</a><a class="wa" id="floatingModelWA" target="_blank" rel="noopener">WhatsApp</a></div>
+
+  <script src="cars.js"></script>
+  <script src="views360.js"></script>
+  <script src="i18n.js"></script>
+  <script src="detail.js"></script>
+</body>
+</html>
